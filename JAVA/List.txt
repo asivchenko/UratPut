@@ -1,0 +1,40 @@
+В Java List — это интерфейс из коллекционного фреймворка, представляющий упорядоченную коллекцию элементов, где допускаются дубликаты. Он находится в пакете java.util.
+Основные реализации List:
+
+    ArrayList — наиболее часто используемая реализация, основанная на массиве.
+
+    LinkedList — список, основанный на двусвязной структуре.
+
+    Vector — синхронизированная (устаревшая) реализация.
+
+Пример использования:
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Example {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Alice"); // дубликаты разрешены
+
+        System.out.println(names); // [Alice, Bob, Alice]
+    }
+}
+
+Основные методы интерфейса List:
+
+    add(E e) — добавить элемент.
+
+    get(int index) — получить элемент по индексу.
+
+    set(int index, E element) — заменить элемент.
+
+    remove(int index) — удалить по индексу.
+
+    size() — размер списка.
+
+    contains(Object o) — проверка наличия элемента.
+
+    clear() — очистить список.

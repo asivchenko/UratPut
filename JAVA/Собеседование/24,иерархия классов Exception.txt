@@ -1,0 +1,57 @@
+Вот краткий обзор иерархии классов Exception в Java (упрощённая схема):
+ 
+java.lang.Object
+ └── java.lang.Throwable
+      ├── java.lang.Error
+      │    ├── AssertionError
+      │    ├── OutOfMemoryError
+      │    └── ...
+      └── java.lang.Exception
+           ├── java.lang.RuntimeException
+           │    ├── NullPointerException
+           │    ├── IndexOutOfBoundsException
+           │    ├── IllegalArgumentException
+           │    ├── ArithmeticException
+           │    └── ...
+           ├── IOException
+           ├── SQLException
+           ├── ParseException
+           └── ...
+ 
+Более подробное объяснение:
+ 
+    Throwable
+    Базовый класс для всех ошибок и исключений.
+    Содержит:
+ 
+        Error — серьёзные ошибки, от которых программа обычно не может оправиться (например OutOfMemoryError, StackOverflowError).
+ 
+        Exception — исключения, которые могут быть перехвачены и обработаны.
+ 
+    Exception
+    Представляет условия, которые программа может захотеть отловить и обработать.
+    Делится на:
+ 
+        Checked exceptions (проверяемые) — наследники Exception, но не наследники RuntimeException. Компилятор требует, чтобы их обрабатывали явно (try/catch или throws).
+        Например:
+ 
+            IOException
+ 
+            SQLException
+ 
+            ParseException
+ 
+        Unchecked exceptions (непроверяемые) — наследники RuntimeException.
+        Компилятор не требует их явно обрабатывать. Обычно возникают из-за ошибок программиста.
+        Например:
+ 
+            NullPointerException
+ 
+            IndexOutOfBoundsException
+ 
+            IllegalArgumentException
+ 
+            ArithmeticException
+ 
+    Error
+    Не предназначены для перехвата. Означают серьёзные сбои в JVM или нехватку ресурсов.

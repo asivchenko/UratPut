@@ -1,0 +1,44 @@
+✅ Коллекции из пакета java.util.concurrent
+
+Они специально созданы для многопоточности и не вызывают ConcurrentModificationException при конкурентных изменениях.
+Коллекция	Назначение
+ConcurrentHashMap<K, V>	Потокобезопасная замена HashMap
+CopyOnWriteArrayList<E>	Потокобезопасная замена ArrayList
+CopyOnWriteArraySet<E>	Потокобезопасная замена HashSet
+ConcurrentSkipListMap<K, V>	Потокобезопасный TreeMap (сортировка)
+ConcurrentSkipListSet<E>	Потокобезопасный TreeSet
+BlockingQueue и её реализации:	Очереди с блокировкой
+→ ArrayBlockingQueue, LinkedBlockingQueue, PriorityBlockingQueue, DelayQueue	
+ConcurrentLinkedQueue	Неблокирующая очередь (FIFO)
+ConcurrentLinkedDeque	Неблокирующий двусторонний список
+🔸 Collections.synchronizedXXX()
+
+Это старый способ сделать коллекции потокобезопасными, но с внешней синхронизацией:
+
+List<String> list = Collections.synchronizedList(new ArrayList<>());
+Set<Integer> set = Collections.synchronizedSet(new HashSet<>());
+Map<String, String> map = Collections.synchronizedMap(new HashMap<>());
+
+⚠️ Но важно: итерация всё ещё не потокобезопасна — нужно вручную синхронизировать:
+
+synchronized (list) {
+    for (String item : list) {
+        // безопасный доступ
+    }
+}
+
+🔸 Vector, Hashtable, Stack — устаревшие потокобезопасные коллекции
+
+    Синхронизированы, но медленные.
+
+    Используются редко в современных проектах.
+
+    Лучше использовать ConcurrentHashMap, CopyOnWriteArrayList, Deque и т.д.
+
+🧠 Когда что использовать?
+Сценарий	Рекомендуемая коллекция
+Частые чтения, редкие изменения	CopyOnWriteArrayList, CopyOnWriteArraySet
+Высокая нагрузка на Map	ConcurrentHashMap
+Очереди между потоками	LinkedBlockingQueue, ConcurrentLinkedQueue
+Сортированная Map в потоках	ConcurrentSkipListMap
+Нужна потокобезопасная List, но без особенностей	Collections.synchronizedList()

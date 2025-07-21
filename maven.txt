@@ -1,0 +1,74 @@
+Maven (MVN) — это система управления проектами и автоматизации сборки для Java.
+
+Можно сказать так:
+
+?? Maven = "умный сборщик + менеджер зависимостей"
+Что делает Maven:
+
+    ?? Собирает проект
+    > компилирует код Java > собирает .jar или .war файл
+
+    ?? Управляет зависимостями
+    > автоматически скачивает библиотеки, которые ты укажешь в pom.xml
+    (например, Spring Boot, Jackson, Apache Commons и т.п.)
+
+    ?? Запускает тесты
+    > автоматический прогон юнит-тестов
+
+    ?? Создаёт готовый для деплоя артефакт
+    > например, myapp.jar или myapp.war
+
+    ?? Определяет стандартную структуру проекта
+    > упрощает работу в команде
+
+Как работает Maven:
+
+Ты создаёшь в проекте файл pom.xml ("Project Object Model") — это конфигурация проекта.
+
+В pom.xml ты указываешь:
+
+    Зависимости (например, Spring Boot Starter Web)
+
+    Плагины (например, maven-compiler-plugin)
+
+    Версию Java
+
+    Имя и версию проекта
+
+Примеры команд Maven:
+Команда	Что делает
+mvn clean	Чистит старые артефакты сборки
+mvn compile	Компилирует проект
+mvn package	Собирает .jar или .war
+mvn install	Собирает и кладёт в локальный Maven-репозиторий
+mvn test	Запускает тесты
+mvn dependency:tree	Показывает дерево зависимостей
+mvn spring-boot:run	Запускает Spring Boot приложение
+Пример минимального pom.xml:
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- Spring Boot Web Starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+</project>
+
+Кратко:
+
+?? Maven помогает тебе:
+? управлять библиотеками
+? собирать проект
+? запускать тесты
+? стандартизировать процесс сборки

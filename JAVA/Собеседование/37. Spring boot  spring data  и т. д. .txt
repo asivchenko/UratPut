@@ -1,0 +1,100 @@
+🌱 Spring Boot
+ 
+    📦 «Фреймворк для фреймворка», упрощает создание Spring-приложений
+ 
+    Автоконфигурация (@SpringBootApplication + Starter'ы): минимальная настройка для запуска приложения.
+ 
+    Встроенные серверы (Tomcat, Jetty, Undertow) — запускаешь через java -jar, не нужен внешний контейнер.
+ 
+    Поддержка свойств и профилей (application.properties / application.yml).
+ 
+    Автоматическая конфигурация DataSource, Security, JSON и др.
+ 
+    Встроенный Actuator для мониторинга (endpoints /actuator/health, /metrics и др).
+ 
+    Легко интегрируется с Docker, Kubernetes, cloud platform.
+ 
+🔍 Spring Data
+ 
+    Упрощает работу с хранилищами данных (JPA, Mongo, Redis и др.)
+ 
+    Spring Data JPA:
+ 
+        Репозитории (JpaRepository, CrudRepository) для CRUD без SQL.
+ 
+        Авто-генерация запросов по имени метода (findByNameAndStatus).
+ 
+        Поддержка @Query для явных JPQL / SQL.
+ 
+    Spring Data MongoDB / Redis / Elasticsearch — одинаковый паттерн репозиториев для NoSQL.
+ 
+    Пагинация, сортировка, спеки (JpaSpecificationExecutor).
+ 
+🔐 Spring Security
+ 
+    Стандарт для обеспечения безопасности Java-приложений
+ 
+    Поддержка аутентификации и авторизации (веб, REST, JWT).
+ 
+    Конфигурация через DSL: http.authorizeHttpRequests()...
+ 
+    Поддержка OAuth2 / OpenID Connect (Google, Facebook и др.).
+ 
+    CSRF, CORS, сессии, Remember-me, RBAC (роли и права).
+ 
+    @PreAuthorize, @Secured для аннотаций на методах.
+ 
+💉 Spring Core / Spring Framework
+ 
+    Базовая инфраструктура (IoC, DI, AOP)
+ 
+    Inversion of Control (IoC) через контейнер Spring.
+ 
+    Dependency Injection (DI) через @Component, @Service, @Autowired.
+ 
+    Aspect-Oriented Programming (@Aspect + @Before, @Around).
+ 
+    Spring Expression Language (SpEL).
+ 
+⚙️ Spring MVC / Web
+ 
+    Создание REST API и веб-приложений
+ 
+    Контроллеры @RestController, @GetMapping, @PostMapping.
+ 
+    Валидация входящих DTO через @Valid + Bean Validation (Hibernate Validator).
+ 
+    Обработка ошибок через @ControllerAdvice.
+ 
+🕸 Spring WebFlux
+ 
+    Реактивное программирование (Mono, Flux), для высоконагруженных / неблокирующих приложений.
+ 
+🖥 Spring Batch
+ 
+    Для сложных ETL-задач и пакетных обработок (import/export, massive processing).
+ 
+🛠 Spring Cloud
+ 
+    Набор проектов для микросервисов:
+ 
+    Конфигурация через Spring Cloud Config Server.
+ 
+    Service Discovery (Eureka, Consul).
+ 
+    Circuit Breaker (Resilience4j, Hystrix).
+ 
+    Distributed Tracing (Sleuth + Zipkin).
+ 
+    API Gateway (Spring Cloud Gateway).
+ 
+✅ Итог
+Технология    Основное назначение
+Spring Boot    Быстрый запуск и авто-конфигурация
+Spring Data    Упрощенная работа с базами (JPA, Mongo, Redis)
+Spring Security    Аутентификация, авторизация, защита
+Spring MVC/Web    REST API, веб-контроллеры
+Spring WebFlux    Реактивная модель, асинхронность
+Spring Batch    Пакетные задачи (ETL, большие выгрузки)
+Spring Cloud    Микросервисы, конфигурация, сервис discovery
+Spring Core    DI, IoC, AOP — фундамент Spring
